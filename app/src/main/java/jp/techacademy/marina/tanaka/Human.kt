@@ -3,13 +3,11 @@ package jp.techacademy.marina.tanaka
 import android.util.Log
 
 open class Human: Animal, Thinkable {
+    var hobby: String
     //引数付きコンストラクタ
-    constructor(name: String, age: Int): super(name, age) {
+    constructor(name: String, age: Int, hobby: String): super(name, age) {
+        this.hobby =hobby
 }
-
-    var hobby1: String ="バドミントン"
-    var hobby2: String ="ねっこ"
-
 
   // Animalクラスのメソッドをオーバーライド
   override fun say() {
@@ -18,8 +16,7 @@ open class Human: Animal, Thinkable {
 
     //Thinkableインターフェースのメソッドをオーバーライド
     override fun think() {
-        Log.d("kotlintest", "私は" +this.hobby1+ "について考える。")
-        Log.d("kotlintest", "私は" +this.hobby2+ "について考える。")
+        Log.d("kotlintest", "私は" +this.hobby+ "について考える。")
     }
 
 
